@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#2b2340">
+  <meta name="description" content="The Hidden Chapter — a personal journal in an enchanted library.">
+  <title>The Hidden Chapter — Your private little universe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Caveat:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="ambient" aria-hidden="true">
+    <span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span>
+  </div>
+
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <button class="brand" data-view="home" aria-label="The Hidden Chapter home">
+        <span class="brand-mark">✦</span>
+        <span>
+          <strong>The Hidden Chapter</strong>
+          <small>your private little universe</small>
+        </span>
+      </button>
+
+      <div class="side-label">YOUR LIBRARY</div>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <button class="nav-item active" data-view="home">
+          <span>⌂</span> The Library
+        </button>
+        <button class="nav-item" data-action="new">
+          <span>✎</span> Write a chapter <kbd>N</kbd>
+        </button>
+        <button class="nav-item" data-view="memories">
+          <span>☾</span> The Observatory
+        </button>
+        <button class="nav-item" data-view="garden">
+          <span>❀</span> Reflection Garden
+        </button>
+        <button class="nav-item" data-view="studio">
+          <span>✧</span> Curiosity Shop
+        </button>
+      </nav>
+
+      <div class="side-label collections-label">YOUR COLLECTIONS</div>
+
+      <div class="collection-list" id="tag-list">
+        <button class="collection-item" data-tag="all">
+          <i class="dot dot-gold"></i>
+          All chapters
+          <span id="all-count">0</span>
+        </button>
+        <button class="collection-item" data-tag="favorites">
+          <i class="dot dot-pink"></i>
+          Little treasures
+          <span id="favorite-count">0</span>
+        </button>
+      </div>
+
+      <div class="sidebar-bottom">
+        <div class="mini-book">
+          <div class="mini-book-star">✧</div>
+          <div>
+            <b>A little reminder</b>
+            <p>Your story doesn't need to be extraordinary to be worth keeping.</p>
+          </div>
+        </div>
+
+        <button class="nav-item" data-view="settings">
+          <span>⚙</span> Keeper's Desk
+        </button>
+
+        <div class="storage-note">
+          <span class="status-dot"></span>
+          <span id="storage-label">Saved privately in this browser</span>
+        </div>
+      </div>
+    </aside>
+
+    <main class="main-area">
+      <header class="topbar">
+        <button
+          class="icon-button mobile-menu"
+          id="menu-toggle"
+          aria-label="Open navigation"
+        >☰</button>
+
+        <div class="breadcrumb" id="breadcrumb">
+          THE GRAND LIBRARY <span>✦</span>
+        </div>
+
+        <div class="top-actions">
+          <label class="search-box">
+            <span>⌕</span>
+            <input
+              id="global-search"
+              type="search"
+              placeholder="Find a memory…"
+              aria-label="Search journal"
+            >
+            <kbd>⌘ K</kbd>
+          </label>
+
+          <button
+            class="icon-button theme-quick"
+            id="theme-quick"
+            aria-label="Change theme"
+            title="Change theme"
+          >✧</button>
+
+          <button
+            class="avatar-button"
+            id="open-settings"
+            aria-label="Open settings"
+          >✦</button>
+        </div>
+      </header>
+
+      <div id="view-root" class="view-root" tabindex="-1"></div>
+
+      <footer class="app-footer">
+        <span>Made of memories &amp; a little magic</span>
+        <span>✦ &nbsp; Your story belongs to you</span>
+      </footer>
+    </main>
+  </div>
+
+  <div
+    class="toast-region"
+    id="toast-region"
+    aria-live="polite"
+    aria-atomic="true"
+  ></div>
+
+  <dialog class="modal" id="modal">
+    <div class="modal-inner" id="modal-inner"></div>
+  </dialog>
+
+  <input id="photo-input" type="file" accept="image/*" multiple hidden>
+  <input id="import-input" type="file" accept="application/json,.json" hidden>
+  <input
+    id="import-input"
+    type="file"
+    accept="application/json,.json"
+    hidden
+>
+
+  <script src="script.js"></script>
+</body>
+</html>
